@@ -1,1 +1,15 @@
-<p>task-item works!</p>
+<div
+  [ngClass]="{ reminder: task.reminder }"
+  class="task"
+  (dblclick)="onToggleTask(task)"
+>
+  <h3>
+    {{ task.text }}
+    <fa-icon
+      (click)="onDeleteTask(task)"
+      [ngStyle]="{ color: 'red' }"
+      [icon]="icon"
+    ></fa-icon>
+  </h3>
+  <p>{{ task.day }}</p>
+</div>

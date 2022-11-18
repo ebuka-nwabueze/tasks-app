@@ -15,14 +15,8 @@
     {
       "text": "Make my hair",
       "day": "14th, Sept, 2022",
-      "reminder": true,
+      "reminder": false,
       "id": 6
-    },
-    {
-      "text": "Sandwich Shopping ",
-      "day": "14th, Sept, 2022",
-      "reminder": true,
-      "id": 7
     }
   ]
 }
