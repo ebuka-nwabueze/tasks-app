@@ -21,7 +21,7 @@ body {
   border-radius: 5px;
 }
 .btn {
-  display: inline-block;
+  /* display: inline-block; */
   background: #000;
   color: #fff;
   border: none;

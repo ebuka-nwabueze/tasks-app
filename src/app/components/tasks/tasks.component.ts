@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from 'src/app/services/task.service';
 import { TaskType } from 'src/types/types';
-TaskService;
 
 @Component({
   selector: 'app-tasks',
@@ -28,8 +27,12 @@ export class TasksComponent implements OnInit {
       );
   }
 
-  toggleReminder(task: TaskType){
-    task.reminder = !task.reminder
-    this.taskService.toggleTask(task).subscribe()
+  toggleReminder(task: TaskType) {
+    task.reminder = !task.reminder;
+    this.taskService.toggleTask(task).subscribe();
+  }
+
+  addTask(task: TaskType) {
+    this.taskService.addTask(task).subscribe((task) => this.tasks.push(task));
   }
 }

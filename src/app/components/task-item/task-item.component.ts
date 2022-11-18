@@ -10,8 +10,8 @@ import { faClose } from '@fortawesome/free-solid-svg-icons';
 })
 export class TaskItemComponent implements OnInit {
   icon = faClose
-  @Input() task: TaskType = {id: 1, day: "", text: "", reminder: false}
-  @Output() iconClick: EventEmitter<TaskType> = new EventEmitter()
+  @Input() task!: TaskType
+  @Output() deleteTask: EventEmitter<TaskType> = new EventEmitter()
   @Output() toggleReminder: EventEmitter<TaskType>  = new EventEmitter()
 
   constructor() { }
@@ -20,12 +20,10 @@ export class TaskItemComponent implements OnInit {
   }
 
   onDeleteTask(task: TaskType){
-    console.log(task.id)
-    this.iconClick.emit(task)
+    this.deleteTask.emit(task)
   }
 
   onToggleTask(task: TaskType){
-    console.log(task.id)
     this.toggleReminder.emit(task)
   }
 

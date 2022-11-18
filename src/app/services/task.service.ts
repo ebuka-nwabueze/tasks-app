@@ -28,6 +28,10 @@ export class TaskService {
   toggleTask(task: TaskType): Observable<TaskType>{
     return this.http.put<TaskType>(`${this.apiUrl}/${task.id}`,task,httpOptions)
   }
+  addTask(task: TaskType): Observable<TaskType>{
+    return this.http.post<TaskType>(this.apiUrl,task, httpOptions)
+  }
+
 
 
 }
